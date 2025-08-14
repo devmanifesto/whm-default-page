@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tu sitio aún no está en línea — Hostium</title>
+  <meta name="description" content="Este dominio apunta a los DNS de Hostium pero no tiene un plan de hosting activo. Activá tu web en minutos con SSL gratis, migración asistida y soporte 24/7." />
+  <meta name="theme-color" content="#0b0b0f" />
+  <link rel="icon" href="https://hostium.com/wp-content/uploads/2020/12/ico.ico" />
+
+  <style>
+    :root{
+      --bg:#0b0b0f;
+      --ink:#e8e8ee;
+      --ink-dim:#9aa0ab;
+      --accent:#FF7A2E;
+      --ok:#85B622;
+      --warn:#FFB800;
+      --radius:16px;
+      --shadow:0 10px 30px rgba(0,0,0,.35);
+      --wrap:980px;
+      --gap:24px; /* espacio entre barra y módulo */
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%}
+    body{
+      min-height:100vh;
+      display:flex;
+      align-items:center;         /* centra vertical */
+      justify-content:center;     /* centra horizontal */
+      padding:20px;
+      background:
+        radial-gradient(1200px 600px at 80% 10%, rgba(23,176,255,.14), transparent 60%),
+        radial-gradient(1000px 500px at 0% 90%, rgba(255,122,46,.10), transparent 60%),
+        var(--bg);
+      color:var(--ink);
+      font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,Ubuntu,"Helvetica Neue",Arial,sans-serif;
+      letter-spacing:.2px;
+    }
+
+    /* Contenedor del BLOQUE (barra + módulo) centrado */
+    .block{
+      width:100%;
+      max-width:var(--wrap);
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:var(--gap);
+    }
+
+    /* Barra blanca VISUALMENTE full-width usando ::before */
+    .topbar{
+      position:relative;
+      width:100%;
+      z-index:0;
+    }
+    /* Tira blanca que se extiende a 100vw, sin bordes redondeados */
+    .topbar::before{
+      content:"";
+      position:absolute;
+      left:50%;
+      transform:translateX(-50%);
+      top:0;bottom:0;
+      width:100vw;                 /* ocupa todo el viewport */
+      background:#fff;
+      box-shadow:0 3px 8px rgba(0,0,0,.08);
+      z-index:-1;                  /* queda detrás del contenido del header */
+    }
+    .topbar-inner{
+      max-width:var(--wrap);
+      margin:auto;
+      padding:10px 16px;
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+    .logo img{height:38px;width:auto;display:block}
+    .brand{font-weight:700;letter-spacing:.4px;color:#000}
+
+    /* Módulo informativo */
+    .card{
+      background:rgba(18,18,24,.72);
+      backdrop-filter:blur(6px);
+      border:1px solid rgba(255,255,255,.06);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:28px;
+      width:100%;
+    }
+    h1{font-size:clamp(24px,4.5vw,40px);line-height:1.15;margin-bottom:10px}
+    .lead{color:var(--ink-dim);margin-bottom:22px}
+
+    .badges{display:flex;flex-wrap:wrap;gap:10px;margin:16px 0 24px}
+    .badge{
+      padding:8px 12px;border-radius:999px;font-size:14px;
+      border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.03);
+      display:inline-flex;align-items:center;gap:8px
+    }
+    .dot{width:9px;height:9px;border-radius:50%}
+    .ok{background:var(--ok)}
+    .off{background:#ff4757}
+    .warn{background:var(--warn)}
+
+    .actions{display:flex;flex-wrap:wrap;gap:12px}
+    .btn{
+      appearance:none;border:0;cursor:pointer;text-decoration:none;
+      padding:12px 16px;border-radius:12px;font-weight:700;
+      transition:transform .06s ease,opacity .2s ease,background .2s ease;
+      display:inline-flex;align-items:center;gap:10px;white-space:nowrap
+    }
+    .btn:hover{transform:translateY(-1px)}
+    .btn.primary{background:var(--accent);color:#0b0b0f}
+    .btn.secondary{background:rgba(255,255,255,.06);color:var(--ink)}
+    .btn.ghost{background:transparent;border:1px dashed rgba(255,255,255,.15);color:var(--ink)}
+
+    @media (max-width:800px){
+      .actions .btn{flex:1}
+      .card{padding:22px}
+    }
+  </style>
+</head>
+<body>
+
+  <div class="block">
+    <!-- Barra blanca full-width, centrada junto al módulo -->
+    <header class="topbar" role="banner">
+      <div class="topbar-inner">
+        <div class="logo">
+          <img src="https://hostium.com/wp-content/uploads/2018/07/logo-2.png" alt="Hostium">
+        </div>
+      </div>
+    </header>
+
+    <!-- Módulo informativo -->
+    <section class="card" role="main" aria-labelledby="t1">
+      <h1 id="t1">Tu sitio todavía no está en línea</h1>
+      <p class="lead">
+        Este dominio apunta a nuestros DNS, pero no tiene un plan de hosting activo.
+        Activá tu web en minutos: SSL incluido, migración asistida y soporte 24/7.
+      </p>
+
+      <div class="badges" aria-label="Estado del dominio">
+        <span class="badge"><span class="dot ok" aria-hidden="true"></span> DNS activos</span>
+        <span class="badge"><span class="dot off" aria-hidden="true"></span> Hosting no activo</span>
+        <span class="badge"><span class="dot warn" aria-hidden="true"></span> Acción requerida</span>
+      </div>
+
+      <nav class="actions" aria-label="Acciones principales">
+        <a class="btn primary" href="https://clientes.hostium.com/login" rel="noopener">Área de clientes</a>
+        <a class="btn secondary" href="https://hostium.com" rel="noopener">Conocé planes</a>
+        <a class="btn ghost" href="https://hostium.com/contacto/" rel="noopener">Contactanos</a>
+      </nav>
+    </section>
+  </div>
+
+</body>
+</html>
